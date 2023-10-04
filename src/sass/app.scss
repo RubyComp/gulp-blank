@@ -1,12 +1,22 @@
-// @import 'fonts';
-// @import 'grid';
+@import 'fonts';
+@import 'grid';
 // @import 'meta';
-// @import 'components';
+@import 'components';
 // @import 'common';
 // @import 'sections';
 // @import 'modules';
 // @import 'slider';
+@import 'details';
 
 * {
 	transition: .1s;
+	box-sizing: border-box;
 }
+
+html, body{
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-family: 'Inter', Arial;
+}
+

@@ -1,0 +1,27 @@
+.button{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 33px;
+    padding: 6.6px 35px 5.5px;
+
+    background-color: $orange;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    span{
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        transition: inherit;
+    }
+
+    &:hover{
+        background-color: white;
+        span{
+            color: $orange;
+        }
+    }
+}
+

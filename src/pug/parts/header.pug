@@ -1,5 +1,26 @@
 header.header
-	| Шапка
+	-
+		const logoSrc = '/resources/images/XIM-01.png'
+		const navrefs = [
+			{title: "Главная", ref: '/'},
+			{title: "О компании", ref: '/about.html'},
+			{title: "Каталог", ref: '/'},
+			{title: "Где купить", ref: '/'},
+			{title: "Контакты", ref: '/'}
+		]
+	.container
+		a.header__logo(href="/")
+			img(src=imgPath + "XIM-01.png" alt='logo').site-logo
+		nav.header__nav
+			ul.header__navList
+				each ref in navrefs
+					li.header__navListItem
+						a(href=ref.ref).header__ref
+							span #{ref.title}
+		.header__actions 
+			.button
+				span Стать партнёром
+
 	//- a.header__logo(href="/")
 	//- 	img.site-logo(src=imgPath + "logo.svg")
 	//- nav.header__nav

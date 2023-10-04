@@ -1,0 +1,52 @@
+@import "common.scss";
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $header-height;
+
+    box-shadow: 0px 0px 5px rgba($color: black, $alpha: .5);
+
+    .header__logo{
+        width: 154px;
+        height: 88px;
+        margin-bottom: 15px;
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-around;
+
+        .header__nav{
+            display: flex;
+            align-items: center;
+
+            .header__navList{
+                display: flex;
+                list-style: none;
+                padding: 0 29px;
+
+                .header__navListItem{
+                    margin-right: 82px;
+
+                    &:last-child{
+                        margin-right: 0;
+                    }
+
+                    .header__ref{
+                        font-family: "Montserrat";
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: black;
+                    }  
+                }
+            }
+        }
+
+        .header__actions{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
