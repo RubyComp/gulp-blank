@@ -5,15 +5,18 @@ block head
 
 block body
 
-	- const imgPath = '/resources/images/'
-
-	#wrapper
+	#wrapper.simply-template
 
 		include ../parts/header
 
 		main#main
 			block content
 
-		include ../parts/burger-menu
+		include ../parts/footer
+
+	include ../parts/popups
+	include ../parts/modals
+
+	include ../parts/burger-menu
 
 	include ../parts/scripts

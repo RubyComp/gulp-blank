@@ -1,12 +1,14 @@
-// @import 'fonts';
-// @import 'grid';
-// @import 'meta';
-// @import 'components';
-// @import 'common';
+@import 'variables';
+@import 'normalize';
+@import 'fonts';
+@import 'grid';
+@import 'meta';
+@import 'components';
+@import 'common';
 // @import 'sections';
-// @import 'modules';
+@import 'modules';
 // @import 'slider';
 
-* {
-	transition: .1s;
-}
+// * {
+// 	transition: .1s;
+// }

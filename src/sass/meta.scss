@@ -1,25 +1,43 @@
-$imgPath: '/resources/images/';
+:root {
+	--back-color: #000;
+	--back-soft-color: #454245;
 
-// :root {
-	// --back-color: #111;
-	// --accent-color: #FB3B11;
-	// --accent-color-soft: #FB3B114D;
-	// --dark-color: #161615;
-	// --grey-color: #383838;
-	// --light-grey-color: #8B8B8B;
-	// --light-color: #F1F1F1;
+	--light-color: #5daed4;
+	--light-color-soft: #d8edfa;
+
+	--accent-color: coral;
+	--accent-back: rgb(216, 177, 162);
+	// --accent-color-soft: #88D4FF;
+
+	--neutral-color: rgba(255, 255, 255, 0.9);
+	--neutral-color-grey: #67676d;
+	--neutral-color-dark: #292a2b;
+
+	--positive-color: #10ad29;
+	--warn-color: #ff8718;
+	--danger-color: #c53c32;
+
+	--text-color: var(--neutral-color);
+
 	// --silver-gradient: linear-gradient(140deg, #323232 0%, #F3F3F3 100%);
-	// --carbon-gradient: linear-gradient(180deg, #1C1C1C 0%, #111 50.00%);
-	// --text-color: var(--light-color);
+	--accent-font: 'Montserrat', 'roboto', 'arial';
+	--main-font: 'Inter', 'roboto', 'arial';
 
-	// --silver-line: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 52.60%, rgba(217, 217, 217, 0.00) 99.99%);
+	--header-height: 140px;
+	--footer-margin: 60px;
 
-	// --accent-font: 'Kharkiv-Tone', 'roboto', 'arial';
-	// --main-font: 'Inter', 'roboto', 'arial';
-
-	// --header-height: 68px;
-
-	// --page-top-margin: 4rem;
+	@include md {
+		--header-height: 120px;
+	}
+	@include sm {
+		--header-height: 84px;
+	}
+	@include xs {
+		--header-height: 74px;
+	}
+	@include xxs {
+		--header-height: 62px;
+	}
 
 	// @include sm {
 	// 	--header-height: 60px;
@@ -27,19 +45,23 @@ $imgPath: '/resources/images/';
 	// @include xs {
 	// 	--header-height: 60px;
 	// }
-// }
+}
 
 *,
 *::before,
-*::after {
+*::after,
+*::placeholder {
+	background: none;
 	border: initial;
 	box-sizing: border-box;
 	color: inherit;
+	font-size: inherit;
 	list-style: none;
 	margin: 0;
+	outline: none;
 	padding: 0;
 }
 
 // ::selection {
-// 	background-color: #9c9da057;
+// 	background-color: steelblue;
 // }

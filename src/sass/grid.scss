@@ -1,97 +1,95 @@
-$fix: 40px;
+@layer grid {
+	$fix: 40px;
 
-$lg-grid: 1360px;
-$md-grid: 960px;
-$sm-grid: 600px;
-$xs-grid: 440px;
-$xxs-grid: 320px;
+	$xxl-grid: 2500px;
+	$xl-grid:  2048px;
+	$lg-grid:  1600px;
+	$md-grid:  1240px;
+	$sm-grid:   960px;
+	$xs-grid:   780px;
+	$xxs-grid:  440px;
 
-$lg: $lg-grid + $fix;
-$md: $md-grid + $fix;
-$sm: $sm-grid + $fix;
-$xs: $xs-grid + $fix;
-$xxs: $xxs-grid + $fix;
+	$xxl: $xxl-grid + $fix;
+	$xl:  $xl-grid  + $fix;
+	$lg:  $lg-grid  + $fix;
+	$md:  $md-grid  + $fix;
+	$sm:  $sm-grid  + $fix;
+	$xs:  $xs-grid  + $fix;
+	$xxs: $xxs-grid + $fix;
 
-@mixin media-base($min, $max) {
-
-	@media only screen
-		and (min-width: $min)
-		and (max-width: calc($max - .2px)) {
-
-		@content;
-
-	}
-}
-
-@mixin lg {
-	@media only screen and (min-width: $lg) {
-		@content;
-	}
-}
-
-@mixin md {
-	@include media-base($md, $lg) {
-		@content;
-	}
-}
-
-@mixin sm {
-	@include media-base($sm, $md) {
-		@content;
-	}
-}
-
-@mixin xs {
-	@include media-base(0, $sm) {
-		@content;
-	}
-}
-
-@mixin xxs {
-	@include media-base(0px, $xs) {
-		@content;
-	}
-}
-
-/**/
-
-@mixin more-than-sm {
-	@media only screen and (min-width: $md) {
-		@content;
-	}
-}
-
-@mixin sm-and-less {
-	@media only screen and (max-width: calc($md - .2px)) {
-		@content;
-	}
-}
-
-.container {
-	margin: 0 auto;
-
-	@include lg {
-		// background-color: grey;
-		width: $lg-grid;
+	@mixin media-base($min, $max) {
+		@media
+			(min-width: calc($min + .2px)) and
+			(max-width: $max) {
+				@content;
+			}
 	}
 
-	@include md {
-		// background-color: coral;
-		width: $md-grid;
+	@mixin xxl {@media (min-width: calc($xxl - .2px)) {@content;}}
+
+	@mixin xl  {@include media-base($xl, $xxl) {@content;}}
+	@mixin lg  {@include media-base($lg, $xl)  {@content;}}
+	@mixin md  {@include media-base($md, $lg)  {@content;}}
+	@mixin sm  {@include media-base($sm, $md)  {@content;}}
+	@mixin xs  {@include media-base($xs, $sm)  {@content;}}
+
+	@mixin xxs {@media (max-width: $xs) {@content;}}
+
+	/**/
+
+	.container,
+	.fluid-container {
+		margin-inline: auto;
+
+		@include xxl {width: $lg-grid}
+		@include xl  {width: $lg-grid}
+		@include lg  {width: $lg-grid}
+		@include md  {width: $md-grid}
+		@include sm  {width: $sm-grid}
+		@include xs  {width: $xs-grid}
+
 	}
 
-	@include sm {
-		// background-color: steelblue;
-		width: $sm-grid;
+	.container {
+		@include xxs {
+			padding-inline: calc($fix / 2);
+		}
 	}
 
-	@include xs {
-		// background-color: forestgreen;
-		width: $xs-grid;
+	// :root {
+	// 	@include md {
+	// 		--header-height: 120px;
+	// 	}
+	// }
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+
+		main {
+			flex-grow: 1;
+		}
 	}
 
-	@include xxs {
-		// background-color: hotpink;
-		width: $xxs-grid;
-	}
+	// .container,
+	// .fluid-container {
+	// 	// background: var(--test-color);
+	// 	// outline: 2px dotted var(--test-color);
+	// 	&:hover {
+	// 		// background: var(--test-color);
+	// 		// outline: 2px dotted var(--test-color);
+	// 		outline: 1px solid rgba(14, 14, 17, 0.2);
+	// 	}
+
+	// 	// @include xxl {width: $lg-grid}
+	// 	// @include xxl {--test-color: goldenrod  ;}
+	// 	// @include xl  {--test-color: saddlebrown;}
+	// 	// @include lg  {--test-color: grey       ;}
+	// 	// @include md  {--test-color: coral      ;}
+	// 	// @include sm  {--test-color: steelblue  ;}
+	// 	// @include xs  {--test-color: forestgreen;}
+	// 	// @include xxs {--test-color: hotpink    ;}
+	// }
+
 }

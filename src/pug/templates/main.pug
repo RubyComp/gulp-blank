@@ -8,9 +8,7 @@ block head
 
 block body
 
-	- const imgPath = '/resources/images/'
-
-	#wrapper
+	#wrapper.main-template
 
 		include ../parts/header
 
@@ -18,9 +16,10 @@ block body
 			block content
 
 		include ../parts/footer
-		include ../parts/popups
-		include ../parts/modals
 
-		include ../parts/burger-menu
+	include ../parts/popups
+	include ../parts/modals
+
+	include ../parts/burger-menu
 
 	include ../parts/scripts

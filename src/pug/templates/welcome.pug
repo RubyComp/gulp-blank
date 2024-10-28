@@ -1,0 +1,18 @@
+extends ../parts/doctype
+
+block head
+	link(rel="stylesheet" href="/css/app.css")
+
+block body
+
+	#wrapper.welcome-template
+
+		main#main
+			block content
+
+	include ../parts/popups
+	include ../parts/modals
+
+	include ../parts/burger-menu
+
+	include ../parts/scripts
