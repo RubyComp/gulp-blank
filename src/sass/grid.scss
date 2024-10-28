@@ -1,95 +1,90 @@
-@layer grid {
-	$fix: 40px;
+$fix: 40px;
 
-	$xxl-grid: 2500px;
-	$xl-grid:  2048px;
-	$lg-grid:  1600px;
-	$md-grid:  1240px;
-	$sm-grid:   960px;
-	$xs-grid:   780px;
-	$xxs-grid:  440px;
+$xxl-grid: 2500px;
+$xl-grid:  2048px;
+$lg-grid:  1600px;
+$md-grid:  1240px;
+$sm-grid:   960px;
+$xs-grid:   780px;
+$xxs-grid:  440px;
 
-	$xxl: $xxl-grid + $fix;
-	$xl:  $xl-grid  + $fix;
-	$lg:  $lg-grid  + $fix;
-	$md:  $md-grid  + $fix;
-	$sm:  $sm-grid  + $fix;
-	$xs:  $xs-grid  + $fix;
-	$xxs: $xxs-grid + $fix;
+$xxl: $xxl-grid + $fix;
+$xl:  $xl-grid  + $fix;
+$lg:  $lg-grid  + $fix;
+$md:  $md-grid  + $fix;
+$sm:  $sm-grid  + $fix;
+$xs:  $xs-grid  + $fix;
+$xxs: $xxs-grid + $fix;
 
-	@mixin media-base($min, $max) {
-		@media
-			(min-width: calc($min + .2px)) and
-			(max-width: $max) {
-				@content;
-			}
-	}
-
-	@mixin xxl {@media (min-width: calc($xxl - .2px)) {@content;}}
-
-	@mixin xl  {@include media-base($xl, $xxl) {@content;}}
-	@mixin lg  {@include media-base($lg, $xl)  {@content;}}
-	@mixin md  {@include media-base($md, $lg)  {@content;}}
-	@mixin sm  {@include media-base($sm, $md)  {@content;}}
-	@mixin xs  {@include media-base($xs, $sm)  {@content;}}
-
-	@mixin xxs {@media (max-width: $xs) {@content;}}
-
-	/**/
-
-	.container,
-	.fluid-container {
-		margin-inline: auto;
-
-		@include xxl {width: $lg-grid}
-		@include xl  {width: $lg-grid}
-		@include lg  {width: $lg-grid}
-		@include md  {width: $md-grid}
-		@include sm  {width: $sm-grid}
-		@include xs  {width: $xs-grid}
-
-	}
-
-	.container {
-		@include xxs {
-			padding-inline: calc($fix / 2);
+@mixin media-base($min, $max) {
+	@media
+		(min-width: calc($min + .2px)) and
+		(max-width: $max) {
+			@content;
 		}
+}
+
+@mixin xxl {@media (min-width: calc($xxl - .2px)) {@content;}}
+
+@mixin xl  {@include media-base($xl, $xxl) {@content;}}
+@mixin lg  {@include media-base($lg, $xl)  {@content;}}
+@mixin md  {@include media-base($md, $lg)  {@content;}}
+@mixin sm  {@include media-base($sm, $md)  {@content;}}
+@mixin xs  {@include media-base($xs, $sm)  {@content;}}
+
+@mixin xxs {@media (max-width: $xs) {@content;}}
+
+/**/
+.container,
+.fluid-container {
+	margin: auto;
+
+	@include xxl {width: $lg-grid}
+	@include xl  {width: $lg-grid}
+	@include lg  {width: $lg-grid}
+	@include md  {width: $md-grid}
+	@include sm  {width: $sm-grid}
+	@include xs  {width: $xs-grid}
+
+}
+.container {
+	@include xxs {
+		padding-inline: calc($fix / 2);
+	}
+}
+
+// :root {
+// 	@include md {
+// 		--header-height: 120px;
+// 	}
+// }
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	main {
+		flex-grow: 1;
+	}
+}
+
+.container,
+.fluid-container {
+	background: var(--test-color);
+	// outline: 2px dotted var(--test-color);
+	&:hover {
+		// background: var(--test-color);
+		// outline: 2px dotted var(--test-color);
+		outline: 1px solid rgba(14, 14, 17, 0.2);
 	}
 
-	// :root {
-	// 	@include md {
-	// 		--header-height: 120px;
-	// 	}
-	// }
-
-	.wrapper {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-
-		main {
-			flex-grow: 1;
-		}
-	}
-
-	// .container,
-	// .fluid-container {
-	// 	// background: var(--test-color);
-	// 	// outline: 2px dotted var(--test-color);
-	// 	&:hover {
-	// 		// background: var(--test-color);
-	// 		// outline: 2px dotted var(--test-color);
-	// 		outline: 1px solid rgba(14, 14, 17, 0.2);
-	// 	}
-
-	// 	// @include xxl {width: $lg-grid}
-	// 	// @include xxl {--test-color: goldenrod  ;}
-	// 	// @include xl  {--test-color: saddlebrown;}
-	// 	// @include lg  {--test-color: grey       ;}
-	// 	// @include md  {--test-color: coral      ;}
-	// 	// @include sm  {--test-color: steelblue  ;}
-	// 	// @include xs  {--test-color: forestgreen;}
-	// 	// @include xxs {--test-color: hotpink    ;}
-	// }
-
+	@include xxl {width: $lg-grid}
+	@include xxl {--test-color: goldenrod  ;}
+	@include xl  {--test-color: saddlebrown;}
+	@include lg  {--test-color: grey       ;}
+	@include md  {--test-color: coral      ;}
+	@include sm  {--test-color: steelblue  ;}
+	@include xs  {--test-color: forestgreen;}
+	@include xxs {--test-color: hotpink    ;}
 }

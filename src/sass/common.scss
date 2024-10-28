@@ -20,12 +20,6 @@ sub, sup {
 	flex-grow: 1;
 }
 
-.common-template #main,
-.main-template #main {
-	@include sm-and-less {
-		margin-top: var(--header-height);
-	}
-}
 
 hr {
 	border-bottom: 1px solid var(--neutral-color-grey);
@@ -102,11 +96,8 @@ hr {
 
 	}
 
-	&_showed {
-		@include sm-and-less {
-			display: block;
-		}
-	}
+	// &_showed {
+	// }
 }
 
 h1 {
