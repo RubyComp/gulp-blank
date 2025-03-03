@@ -2,8 +2,8 @@ $fix: 40px;
 
 $xxl-grid: 2500px;
 $xl-grid:  2048px;
-$lg-grid:  1600px;
-$md-grid:  1240px;
+$lg-grid:  1560px;
+$md-grid:  1200px;
 $sm-grid:   960px;
 $xs-grid:   780px;
 $xxs-grid:  440px;
@@ -35,9 +35,10 @@ $xxs: $xxs-grid + $fix;
 @mixin xxs {@media (max-width: $xs) {@content;}}
 
 /**/
+
 .container,
 .fluid-container {
-	margin: auto;
+	margin-inline: auto;
 
 	@include xxl {width: $lg-grid}
 	@include xl  {width: $lg-grid}
@@ -45,8 +46,8 @@ $xxs: $xxs-grid + $fix;
 	@include md  {width: $md-grid}
 	@include sm  {width: $sm-grid}
 	@include xs  {width: $xs-grid}
-
 }
+
 .container {
 	@include xxs {
 		padding-inline: calc($fix / 2);
@@ -73,11 +74,11 @@ $xxs: $xxs-grid + $fix;
 .fluid-container {
 	background: var(--test-color);
 	// outline: 2px dotted var(--test-color);
-	&:hover {
-		// background: var(--test-color);
-		// outline: 2px dotted var(--test-color);
-		outline: 1px solid rgba(14, 14, 17, 0.2);
-	}
+	// &:hover {
+	// 	// background: var(--test-color);
+	// 	// outline: 2px dotted var(--test-color);
+	// 	outline: 1px solid rgba(14, 14, 17, 0.2);
+	// }
 
 	@include xxl {width: $lg-grid}
 	@include xxl {--test-color: goldenrod  ;}

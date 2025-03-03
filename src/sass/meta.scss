@@ -1,42 +1,47 @@
 :root {
-	--back-color: #000;
-	--back-soft-color: #454245;
+	--back-color: #ffffff;
+	--back-soft-color: #ffffff;
 
-	--light-color: #5daed4;
-	--light-color-soft: #d8edfa;
+	--light-color: #f3f0eb;
+	--light-color-soft: #f1f1f1;
 
-	--accent-color: coral;
-	--accent-back: rgb(216, 177, 162);
-	// --accent-color-soft: #88D4FF;
+	--accent-color: #eca52c;
+	--accent-back: #f5b13d;
+	--accent-color-soft: #c2ab9e;
 
-	--neutral-color: rgba(255, 255, 255, 0.9);
-	--neutral-color-grey: #67676d;
-	--neutral-color-dark: #292a2b;
+	--neutral-color: rgb(230, 230, 230);
+	--neutral-color-light: rgb(213, 213, 212);
+	--neutral-color-lightgray: #727272;
+	--neutral-color-grey: #444444;
+	--neutral-color-dark: #000000;
 
-	--positive-color: #10ad29;
+	--positive-color: #4c915d;
 	--warn-color: #ff8718;
 	--danger-color: #c53c32;
 
-	--text-color: var(--neutral-color);
+	--text-color: var(--neutral-color-dark);
+	--text-anti-color: var(--back-soft-color);
+	--soft-text-color: #0f0f0f;
 
-	// --silver-gradient: linear-gradient(140deg, #323232 0%, #F3F3F3 100%);
-	--accent-font: 'Montserrat', 'roboto', 'arial';
-	--main-font: 'Inter', 'roboto', 'arial';
+	--accent-font: 'Onest', 'sans-setif', 'arial';
+	--main-font: 'Onest', 'sans-setif', 'arial';
 
-	--header-height: 140px;
+	--header-height: 234px;
+	--major-header-height: 196px;
 	--footer-margin: 60px;
 
-	@include md {
-		--header-height: 120px;
+	@media only screen and (max-width: 1600px) {
+		--header-height: 212px;
+		--major-header-height: 174px;
 	}
-	@include sm {
-		--header-height: 84px;
+
+	@media only screen and (max-width: 1240px) {
+		--header-height: 124px;
+		--major-header-height: 86px;
 	}
-	@include xs {
-		--header-height: 74px;
-	}
-	@include xxs {
-		--header-height: 62px;
+	@media only screen and (max-width: 820px) {
+		--header-height: 102px;
+		--major-header-height: 64px;
 	}
 
 	// @include sm {
@@ -47,21 +52,6 @@
 	// }
 }
 
-*,
-*::before,
-*::after,
-*::placeholder {
-	background: none;
-	border: initial;
-	box-sizing: border-box;
-	color: inherit;
-	font-size: inherit;
-	list-style: none;
-	margin: 0;
-	outline: none;
-	padding: 0;
+::selection {
+	background-color: steelblue;
 }
-
-// ::selection {
-// 	background-color: steelblue;
-// }

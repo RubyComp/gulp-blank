@@ -18,7 +18,7 @@ const cleanDist = () => {
 const clear = gulp.parallel(cleanDist)
 
 const compileSass = () => {
-	return gulp.src('src/sass/app.scss')
+	return gulp.src('src/sass/style.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(cleanCSS({ compatibility: 'ie8' }))
 		.pipe(gulp.dest('dist/css'))

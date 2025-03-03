@@ -1,0 +1,24 @@
+body {
+	overflow-x: hidden;
+	pre,
+	code {
+		background-color: rgba(100, 100, 100, 0.35);
+		font-family: consolas;
+	}
+	pre {
+		font-size: 11px;
+		line-height: 1;
+		padding: .25em .32em;
+		tab-size: 3;
+		white-space: break-spaces;
+		word-break: break-all;
+	}
+}
+h1.next-error-h1 {
+	&, & + * h2 {
+		background-color: black;
+		color: white !important;
+		font-family: consolas, Helvetica, sans-serif !important;
+		font-size: 32px !important;
+	}
+}
