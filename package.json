@@ -2,7 +2,9 @@
   "devDependencies": {
     "gulp-clean-css": "^4.3.0",
     "gulp-connect": "^5.7.0",
+    "gulp-index": "^0.2.0",
     "gulp-real-favicon": "^0.3.2",
+    "gulp-w3c-html-validator": "^5.3.0",
     "open": "^9.1.0"
   },
   "name": "gulp-blunk",
